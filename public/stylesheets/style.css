@@ -6,30 +6,3 @@ body {
 a {
   color: #00B7FF;
 }
-
-
-.pb {
-	border:solid #000 1px; 
-	margin-bottom:20px;
-	text-align: center;
-	position: relative;
-	overflow: hidden;
-	width:100%;
-
-}
-
-.pb-colour {
-	background: #888;
-	height: 100%;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	-o-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
-}
-
-.pb-text {
-	position:relative;
-}

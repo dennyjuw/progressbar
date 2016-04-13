@@ -11,26 +11,25 @@ block content
 
 		br
 
+		{{#progressBar}}
 		div.col-xs-12.col-sm-4
-			div#pb-1.pb 
-				div#pb-1-inner.pb-colour(style="width:{{progress1}}%") 
-				div#pb-1-text.pb-text {{progress1}}%
+			div.pb 
+				div.pb-colour(style="width:{{value}}%; background:{{over ? 'red' : '#888'}}") 
+				div.pb-text {{value}}%
+		{{/progressBar}}
 
+		
 		div.col-xs-12.col-sm-4
-			div#pb-2.pb
-				div#pb-2-inner.pb-colour(style="width:{{progress2}}%") 
-				div#pb-2-text.pb-text {{progress2}}%
-
-		div.col-xs-12.col-sm-4
-			div#pb-3.pb
-				div#pb-3-inner.pb-colour(style="width:{{progress3}}%") 
-				div#pb-3-text.pb-text {{progress3}}%
-
-		div#pb-control.col-xs-12
-			select#pb-selector(value='{{selectedProgressBar}}')
+			select(value='{{selectedProgressBar}}')
 				{{#progressBar}}
 				option(value='{{id}}') {{name}}
 				{{/progressBar}}
+		
+		div.col-xs-12.col-sm-8			
+			button(on-click="changeValue:-25") -25
+			button(on-click="changeValue:-10") -10
+			button(on-click="changeValue:10") +10
+			button(on-click="changeValue:25") +25
 
 	script(src='/js/pb-ractive.js')
 
