@@ -1,5 +1,37 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  
+	//h1= title
+
+	div#progress-bar
+
+	script(id='template', type='text/ractive')
+		p Hello, {{name}}!
+
+		br
+
+		div.col-xs-12.col-sm-4
+			div#pb-1.pb 
+				div#pb-1-inner.pb-colour(style="width:{{progress1}}%") 
+				div#pb-1-text.pb-text {{progress1}}%
+
+		div.col-xs-12.col-sm-4
+			div#pb-2.pb
+				div#pb-2-inner.pb-colour(style="width:{{progress2}}%") 
+				div#pb-2-text.pb-text {{progress2}}%
+
+		div.col-xs-12.col-sm-4
+			div#pb-3.pb
+				div#pb-3-inner.pb-colour(style="width:{{progress3}}%") 
+				div#pb-3-text.pb-text {{progress3}}%
+
+		div#pb-control.col-xs-12
+			select#pb-selector(value='{{selectedProgressBar}}')
+				{{#progressBar}}
+				option(value='{{id}}') {{name}}
+				{{/progressBar}}
+
+	script(src='/js/pb-ractive.js')
+
+
