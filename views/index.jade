@@ -14,7 +14,8 @@ block content
 		{{#progressBar}}
 		div.col-xs-12.col-sm-4
 			div.pb 
-				div.pb-colour(style="width:{{value}}%; background:{{over ? 'red' : '#888'}}") 
+				//div.pb-colour(style="width:{{value}}%; background:{{over ? 'red' : '#888'}}") 
+				div.pb-colour(style="width:{{value}}%;", class="{{over ? 'red' : ''}}") 
 				div.pb-text {{value}}%
 		{{/progressBar}}
 

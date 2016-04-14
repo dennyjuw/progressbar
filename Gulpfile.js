@@ -7,6 +7,7 @@ var sass = require('gulp-sass');
 var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
 var uglifycss = require('gulp-uglifycss');
+var mocha = require('gulp-mocha');
 
 // File destinations.
 var paths = new (function () {
@@ -16,6 +17,7 @@ var paths = new (function () {
     // source
     this.cssFrom = this.root + '/source/css';
     this.jsFrom = this.root + '/source/js';
+    this.testFrom = this.root + '/test/test.js';
 
     // destination
     this.cssDestination = this.root + '/public/stylesheets';
@@ -55,10 +57,16 @@ gulp.task('js-uglify', function () {
         .pipe(uglify())
         .pipe(gulp.dest(paths.jsDestination));
 });
+
 //-----------------------------------------------------------------
 // TDD task should go here
 //-----------------------------------------------------------------
-
+/*
+gulp.task('run-test', function () {
+    return gulp.src(paths.testFrom, {read: false}) 
+        .pipe(mocha({reporter: 'nyan'}));
+});
+*/
 
 //-----------------------------------------------------------------
 // Default task.
